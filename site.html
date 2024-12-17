@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID чар и эффектов</title>
+	<link rel="stylesheet" href="style.css"> <!-- Подключаем внешний CSS файл -->
+    <style>
+        body {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #555;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #444;
+        }
+        td.icon-cell {
+            width: 64px; 
+        }
+        td.icon-cell img {
+            width: 64px;
+            height: 64px;
+            pointer-events: none;
+        }
+        .copy-text {
+            cursor: pointer;
+            color: lightblue;
+            position: relative;
+        }
+        .copy-text:hover {
+            background-color: #555;
+        }
+<!-- Ниже код для кнопки вперед и назад -->
+        <!-- Кнопки для перехода по страницам -->
+        <div class="navigation">
+            <a href="site.html" class="nav-button nav-prev">Назад</a>
+            <a href="Effect.html" class="nav-button nav-next">Вперёд</a>
+        </div>
+    </div>
+
+    </style>
+    <script>
+        function copyToClipboard(element) {
+            const text = element.innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Скопировано: ' + text);
+            }, function(err) {
+                alert('Ошибка копирования: ', err);
+            });
+        }
+    </script>
+</head>
+<body>
+		<!-- Верхнее меню с кнопками -->
+		<div class="top-buttons">
+			<button class="top-button" onclick="location.href='site.html'">ID Enchant minecraft</button>
+			<button class="top-button" onclick="location.href='Effect.html'">Id Effect Minecraft</button>
+			<button class="top-button" onclick="location.href='contact.html'">Commands minecraft 1.21.3+</button>
+		</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Зачарование</th>
+                <th>Тестовый ID</th>
+                <th><img src="icon/enchattable.png" alt="Стол зачарования" width="32" height="32" draggable="false" oncontextmenu="return false;"></td></th>
+                <th>Макс. Ур.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 35 строк -->
+            <!-- Повторите этот блок 35 раз -->
+            <tr>
+                <td>Разящий клинок</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">sweeping_edge</p></span></td>
+                <td> <img src="icon/sword.png" alt="Меч" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Отбрасывание</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">knockback</p></span></td>
+                <td> <img src="icon/sword.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 2 </td>
+            </tr>
+            <tr>
+                <td>Острота</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">sharpness</p></span></td>
+                <td> <img src="icon/sword.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 5 </td>
+            </tr>
+            <tr>
+                <td>Небесная кара</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">smite</p></span></td>
+                <td> <img src="icon/sword.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 5 </td>
+            </tr>
+            <tr>
+                <td>Добыча</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">looting</p></span></td>
+                <td> <img src="icon/sword.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Заговор огня</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">fire_aspect</p></span></td>
+                <td> <img src="icon/sword.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 2 </td>
+            </tr>
+            <tr>
+                <td>Бич членистоногих</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">bane_of_arthropods</p></span></td>
+                <td> <img src="icon/sword.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 5 </td>
+            </tr>
+            <tr>
+                <td>Эффективность</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">efficiency</p></span></td>
+                <td> 
+				  <img src="icon/pickaxe.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/axe.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/shovel.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/hoe.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 5 </td>
+            </tr>
+            <tr>
+                <td>Шёлковое касание</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">silk_touch</p></span></td>
+                <td>
+				  <img src="icon/pickaxe.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/axe.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/shovel.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/hoe.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+			    </td>
+                <td> 1 </td>
+            </tr>
+            <tr>
+                <td>Удача</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">fortune</p></span></td>
+                <td>
+				  <img src="icon/pickaxe.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/axe.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/shovel.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/hoe.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Откидывание</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">punch</p></span></td>
+                <td> <img src="icon/bow.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 2 </td>
+            </tr>
+            <tr>
+                <td>Сила</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">power</p></span></td>
+                <td> <img src="icon/bow.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 5 </td>
+            </tr>
+            <tr>
+                <td>Воспламенение</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">flame</p></span></td>
+                <td> <img src="icon/bow.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 1 </td>
+            </tr>
+            <tr>
+                <td>Бесконечность</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">infinity</p></span></td>
+                <td> <img src="icon/bow.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 1 </td>
+            </tr>
+            <tr>
+                <td>Пронзающая стрела</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">Piercing</p></span></td>
+                <td> <img src="icon/crossbow.png" alt="Арбалет" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 4 </td>
+            </tr>
+            <tr>
+                <td>Мультишот</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">multishot</p></span></td>
+                <td> <img src="icon/crossbow.png" alt="Арбалет" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 1 </td>
+            </tr>
+            <tr>
+                <td>Быстрая перезарядка</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">quick_charge</p></span></td>
+                <td> <img src="icon/crossbow.png" alt="Арбалет" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Тягун</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">riptide</p></span></td>
+                <td> <img src="icon/trident.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Пронзатель</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">impaling</p></span></td>
+                <td> <img src="icon/trident.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 5 </td>
+            </tr>
+            <tr>
+                <td>Громовержец</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">channeling</p></span></td>
+                <td> <img src="icon/trident.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 1 </td>
+            </tr>
+            <tr>
+                <td>Верность</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">loyalty</p></span></td>
+                <td> <img src="icon/trident.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Прочность</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">unbreaking</p></span></td>
+                <td>
+				  <img src="icon/sword.png" alt="Меч" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/pickaxe.png" alt="Кирка" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/axe.png" alt="Топор" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/shovel.png" alt="Лопата" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/hoe.png" alt="Мотыга" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/chestplate.png" alt="Нагрудник" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/leggins.png" alt="Поножи" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/bow.png" alt="Лук" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/trident.png" alt="Трезубец" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/shears.png" alt="Ножницы" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/sheald.png" alt="Щит" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/elytra.png" alt="Элитры" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/Fishing.png" alt="Удочка" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/flint.png" alt="Зажигалка" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Починка</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">mending</p></span></td>
+                <td>
+				  <img src="icon/sword.png" alt="Меч" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/pickaxe.png" alt="Кирка" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/axe.png" alt="Топор" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/shovel.png" alt="Лопата" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/hoe.png" alt="Мотыга" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/chestplate.png" alt="Нагрудник" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/leggins.png" alt="Поножи" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/bow.png" alt="Лук" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/trident.png" alt="Трезубец" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/shears.png" alt="Ножницы" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/sheald.png" alt="Щит" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/elytra.png" alt="Элитры" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/Fishing.png" alt="Удочка" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/flint.png" alt="Зажигалка" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 1 </td>
+            </tr>
+            <tr>
+                <td>Проклятие утраты</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">vanishing_curse</p></span></td>
+                <td>
+				  <img src="icon/sword.png" alt="Меч" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/pickaxe.png" alt="Кирка" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/axe.png" alt="Топор" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/shovel.png" alt="Лопата" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/hoe.png" alt="Мотыга" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/chestplate.png" alt="Нагрудник" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/leggins.png" alt="Поножи" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/bow.png" alt="Лук" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/trident.png" alt="Трезубец" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/shears.png" alt="Ножницы" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/sheald.png" alt="Щит" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/elytra.png" alt="Элитры" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/Fishing.png" alt="Удочка" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/flint.png" alt="Зажигалка" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 1 </td>
+            </tr>
+            <tr>
+                <td>Проклятие несъёмности</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">binding_curse</p></span></td>
+                <td>
+				  <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/chestplate.png" alt="Нагрудник" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/leggins.png" alt="Поножи" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 1 </td>
+            </tr>
+            <tr>
+                <td>Огнеупорность</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">fire_protection</p></span></td>
+                <td>
+				  <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/chestplate.png" alt="Нагрудник" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/leggins.png" alt="Поножи" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 4 </td>
+            </tr>
+            <tr>
+                <td>Защита от снарядов</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">projectile_protection</p></span></td>
+                <td>
+				  <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/chestplate.png" alt="Нагрудник" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/leggins.png" alt="Поножи" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 4 </td>
+            </tr>
+            <tr>
+                <td>Защита</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">protection</p></span></td>
+                <td>
+				  <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/chestplate.png" alt="Нагрудник" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/leggins.png" alt="Поножи" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 4 </td>
+            </tr>
+            <tr>
+                <td>Взрывоустойчивость</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">blast_protection</p></span></td>
+                <td>
+				  <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/chestplate.png" alt="Нагрудник" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/leggins.png" alt="Поножи" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				  <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;">
+				</td>
+                <td> 4 </td>
+            </tr>
+            <tr>
+                <td>Подводное дыхание</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">respiration</p></span></td>
+                <td> <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Подводник</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">aqua_affinity</p></span></td>
+                <td> <img src="icon/helmet.png" alt="Шлем" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 1 </td>
+            </tr>
+            <tr>
+                <td>Шипы</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">thorns</p></span></td>
+                <td> <img src="icon/chestplate.png" alt="Меч 1" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Проворство</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">swift_sneak</p></span></td>
+                <td> <img src="icon/leggins.png" alt="Поножи" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Скорость души</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">soul_speed</p></span></td>
+                <td> <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Ледеход</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">frost_walker</p></span></td>
+                <td> <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 2 </td>
+            </tr>
+            <tr>
+                <td>Невесомость</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">feather_falling</p></span></td>
+                <td> <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 4 </td>
+            </tr>
+            <tr>
+                <td>Подводная хотьба</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">depth_strider</p></span></td>
+                <td> <img src="icon/boots.png" alt="Ботинки" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Пробитие</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">breach</p></span></td>
+                <td> <img src="icon/mace.png" alt="Булава" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 4 </td>
+            </tr>
+            <tr>
+                <td>Плотность</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">density</p></span></td>
+                <td> <img src="icon/mace.png" alt="Булава" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 5 </td>
+            </tr>
+            <tr>
+                <td>Шквал</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">wind_burst</p></span></td>
+                <td> <img src="icon/mace.png" alt="Булава" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Приманка</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">lure</p></span></td>
+                <td> <img src="icon/Fishing.png" alt="Удочка" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            <tr>
+                <td>Морская удача</td>
+                <td><span class="copy-text" onclick="copyToClipboard(this)"><p style="color: Tomato;">luck_of_the_sea</p></span></td>
+                <td> <img src="icon/Fishing.png" alt="Удочка" width="32" height="32"draggable="false" oncontextmenu="return false;"></td>
+                <td> 3 </td>
+            </tr>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <!-- Конец блока повторения -->
+        </tbody>
+    </table>
+    
+    </body>
+    <!-- // Отображение кнопки вперед назад -->
+    <div class="navigation">
+        <a href="site.html" class="nav-button nav-prev">Назад</a>
+        <a href="Effect.html" class="nav-button nav-next">Вперёд</a>
+    </div>
+
+</body>
+    <script>
+        function copyToClipboard(element) {
+            const text = element.innerText || element.textContent;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';  // Prevent scrolling to bottom of page in MS Edge.
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                console.log('Текст скопирован: ' + text);  // Используйте консоль для подтверждения.
+                showTooltip(element, text);
+            } catch (err) {
+                console.error('Не удалось скопировать текст', err);
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function showTooltip(element, text) {
+            const originalText = element.innerHTML;
+            element.innerHTML = '<p style="color: yellow;">Текст скопирован</p>';
+            setTimeout(() => {
+                element.innerHTML = originalText;
+            }, 1000);
+        }
+    </script>
+</html>
