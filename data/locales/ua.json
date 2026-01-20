@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Zoobastiks - Minecraft Сервер",
+    "description": "Офіційний сайт сервера Zoobastiks. Survival сервер Minecraft 1.21.11 з унікальними механіками, кланами, роботами та багатьма плагінами.",
+    "keywords": "zoobastiks, minecraft, сервер, survival, майнкрафт, зубастикс, zoobastiks minecraft, zoobastik, zoob, z"
+  },
+  "nav": {
+    "home": "Головна",
+    "wiki": "Вікі",
+    "admin": "Адміністрація",
+    "gallery": "Фотоальбом",
+    "support": "Підтримка",
+    "vote": "Голосування"
+  },
+  "home": {
+    "title": "Ласкаво просимо на Zoobastiks",
+    "subtitle": "Survival сервер Minecraft 1.21.11",
+    "join": "Приєднатися",
+    "ip": "IP: Zoobastiks.20tps.name",
+    "players": "Гравців онлайн",
+    "features": {
+      "title": "Особливості сервера",
+      "clans": "Система кланів",
+      "jobs": "Система робіт",
+      "economy": "Економіка",
+      "protection": "Захист регіонів",
+      "telegram": "Інтеграція Telegram",
+      "voice": "Голосовий чат"
+    }
+  },
+  "wiki": {
+    "title": "Вікі сервера",
+    "search": "Пошук...",
+    "categories": {
+      "getting-started": "Початок гри",
+      "clans": "Клани",
+      "jobs": "Роботи",
+      "economy": "Економіка",
+      "commands": "Команди",
+      "plugins": "Плагіни",
+      "worlds": "Світи"
+    }
+  },
+  "admin": {
+    "title": "Адміністрація",
+    "owners": "Власники",
+    "admins": "Адміністратори",
+    "contact": "Зв'язатися"
+  },
+  "gallery": {
+    "title": "Фотоальбом",
+    "loading": "Завантаження...",
+    "empty": "Поки немає фотографій"
+  },
+  "support": {
+    "title": "Підтримка",
+    "telegram": "Telegram",
+    "discord": "Discord",
+    "description": "Якщо у вас виникли питання або проблеми, зв'яжіться з нами через Telegram або Discord."
+  },
+  "vote": {
+    "title": "Голосування",
+    "description": "Голосуйте за сервер і отримуйте нагороди!",
+    "vote": "Голосувати",
+    "rewards": "Нагороди за голосування"
+  },
+  "common": {
+    "loading": "Завантаження...",
+    "error": "Сталася помилка",
+    "back": "Назад",
+    "close": "Закрити",
+    "more": "Детальніше"
+  }
+}
+

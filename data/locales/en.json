@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Zoobastiks - Minecraft Server",
+    "description": "Official website of Zoobastiks server. Minecraft 1.21.11 Survival server with unique mechanics, clans, jobs and many plugins.",
+    "keywords": "zoobastiks, minecraft, server, survival, zoobastiks minecraft, zoobastik, zoob, z"
+  },
+  "nav": {
+    "home": "Home",
+    "wiki": "Wiki",
+    "admin": "Administration",
+    "gallery": "Gallery",
+    "support": "Support",
+    "vote": "Vote"
+  },
+  "home": {
+    "title": "Welcome to Zoobastiks",
+    "subtitle": "Minecraft 1.21.11 Survival Server",
+    "join": "Join Now",
+    "ip": "IP: Zoobastiks.20tps.name",
+    "players": "Players Online",
+    "features": {
+      "title": "Server Features",
+      "clans": "Clan System",
+      "jobs": "Job System",
+      "economy": "Economy",
+      "protection": "Region Protection",
+      "telegram": "Telegram Integration",
+      "voice": "Voice Chat"
+    }
+  },
+  "wiki": {
+    "title": "Server Wiki",
+    "search": "Search...",
+    "categories": {
+      "getting-started": "Getting Started",
+      "clans": "Clans",
+      "jobs": "Jobs",
+      "economy": "Economy",
+      "commands": "Commands",
+      "plugins": "Plugins",
+      "worlds": "Worlds"
+    }
+  },
+  "admin": {
+    "title": "Administration",
+    "owners": "Owners",
+    "admins": "Administrators",
+    "contact": "Contact"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "loading": "Loading...",
+    "empty": "No photos yet"
+  },
+  "support": {
+    "title": "Support",
+    "telegram": "Telegram",
+    "discord": "Discord",
+    "description": "If you have questions or problems, contact us via Telegram or Discord."
+  },
+  "vote": {
+    "title": "Vote",
+    "description": "Vote for the server and get rewards!",
+    "vote": "Vote",
+    "rewards": "Voting Rewards"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "back": "Back",
+    "close": "Close",
+    "more": "More"
+  }
+}
+

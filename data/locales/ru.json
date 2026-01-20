@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Zoobastiks - Minecraft Сервер",
+    "description": "Официальный сайт сервера Zoobastiks. Survival сервер Minecraft 1.21.11 с уникальными механиками, кланами, работами и множеством плагинов.",
+    "keywords": "zoobastiks, minecraft, сервер, survival, майнкрафт, зубастикс, zoobastiks minecraft, zoobastik, zoob, z"
+  },
+  "nav": {
+    "home": "Главная",
+    "wiki": "Вики",
+    "admin": "Администрация",
+    "gallery": "Фотоальбом",
+    "support": "Поддержка",
+    "vote": "Голосование"
+  },
+  "home": {
+    "title": "Добро пожаловать на Zoobastiks",
+    "subtitle": "Survival сервер Minecraft 1.21.11",
+    "join": "Присоединиться",
+    "ip": "IP: Zoobastiks.20tps.name",
+    "players": "Игроков онлайн",
+    "features": {
+      "title": "Особенности сервера",
+      "clans": "Система кланов",
+      "jobs": "Система работ",
+      "economy": "Экономика",
+      "protection": "Защита регионов",
+      "telegram": "Интеграция Telegram",
+      "voice": "Голосовой чат"
+    }
+  },
+  "wiki": {
+    "title": "Вики сервера",
+    "search": "Поиск...",
+    "categories": {
+      "getting-started": "Начало игры",
+      "clans": "Кланы",
+      "jobs": "Работы",
+      "economy": "Экономика",
+      "commands": "Команды",
+      "plugins": "Плагины",
+      "worlds": "Миры"
+    }
+  },
+  "admin": {
+    "title": "Администрация",
+    "owners": "Владельцы",
+    "admins": "Администраторы",
+    "contact": "Связаться"
+  },
+  "gallery": {
+    "title": "Фотоальбом",
+    "loading": "Загрузка...",
+    "empty": "Пока нет фотографий"
+  },
+  "support": {
+    "title": "Поддержка",
+    "telegram": "Telegram",
+    "discord": "Discord",
+    "description": "Если у вас возникли вопросы или проблемы, свяжитесь с нами через Telegram или Discord."
+  },
+  "vote": {
+    "title": "Голосование",
+    "description": "Голосуйте за сервер и получайте награды!",
+    "vote": "Голосовать",
+    "rewards": "Награды за голосование"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Произошла ошибка",
+    "back": "Назад",
+    "close": "Закрыть",
+    "more": "Подробнее"
+  }
+}
+

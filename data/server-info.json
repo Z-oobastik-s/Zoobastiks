@@ -1,0 +1,259 @@
+{
+  "server": {
+    "name": "Zoobastiks",
+    "version": "1.21.11",
+    "type": "Paper",
+    "ip": "Zoobastiks.20tps.name",
+    "port": 20054,
+    "maxPlayers": 99,
+    "gamemode": "survival",
+    "difficulty": "hard",
+    "pvp": true,
+    "onlineMode": false,
+    "queryPort": 20054
+  },
+  "worlds": [
+    {
+      "name": "world",
+      "displayName": "Основной мир",
+      "type": "overworld",
+      "difficulty": "normal",
+      "pvp": true,
+      "gamemode": "survival",
+      "seed": 3950178443588436159
+    },
+    {
+      "name": "lobby",
+      "displayName": "Лобби",
+      "type": "overworld",
+      "difficulty": "normal",
+      "pvp": true,
+      "gamemode": "survival"
+    },
+    {
+      "name": "world_kattersstructures_deep_blue",
+      "displayName": "Deep Blue",
+      "type": "custom",
+      "difficulty": "hard",
+      "pvp": true,
+      "gamemode": "survival"
+    },
+    {
+      "name": "world_nether",
+      "displayName": "Незер",
+      "type": "nether",
+      "difficulty": "normal",
+      "pvp": true,
+      "gamemode": "survival"
+    },
+    {
+      "name": "world_the_end",
+      "displayName": "Энд",
+      "type": "the_end",
+      "difficulty": "normal",
+      "pvp": true,
+      "gamemode": "survival"
+    },
+    {
+      "name": "world_yggdrasil_ginnungagap",
+      "displayName": "Yggdrasil Ginnungagap",
+      "type": "custom",
+      "difficulty": "hard",
+      "pvp": true,
+      "gamemode": "survival"
+    }
+  ],
+  "plugins": {
+    "core": [
+      "EssentialsX",
+      "WorldGuard",
+      "Multiverse-Core",
+      "PermissionsEx",
+      "Vault",
+      "PlaceholderAPI"
+    ],
+    "economy": [
+      "UltimateShop",
+      "PlayerAuctions",
+      "Zcash",
+      "Zshop"
+    ],
+    "social": [
+      "ClansLite",
+      "AdvancedJobs",
+      "ZChat",
+      "ZTelegram",
+      "zdiscord"
+    ],
+     "protection": [
+       "ProtectionStones",
+       "WorldGuard"
+     ],
+    "utilities": [
+      "TAB",
+      "DecentHolograms",
+      "GSit",
+      "ChestSort",
+      "Timber",
+      "SuperHarvest",
+      "AutoReplant"
+    ],
+    "custom": [
+      "Zhard",
+      "Zrank",
+      "Zec",
+      "Zseks",
+      "Zstructure",
+      "ZUpgrade",
+      "Zbossbar",
+      "Zrtp",
+      "Ztnt",
+      "ZRestoreBack"
+    ],
+    "other": [
+      "AdvancedPortals",
+      "BreweryX",
+      "KGenerators",
+      "RoseStacker",
+      "SoulGraves",
+      "SmartSpawner",
+      "voicechat"
+    ]
+  },
+  "features": {
+    "clans": {
+      "enabled": true,
+      "maxMembers": 80,
+      "maxAllies": 10,
+      "maxEnemies": 10,
+      "clanChat": true,
+      "clanHome": true,
+      "protectedChests": true
+    },
+    "jobs": {
+      "enabled": true,
+      "maxJobs": 3,
+      "maxLevel": -1,
+      "language": "ru"
+    },
+    "economy": {
+      "enabled": true,
+      "currency": "⛃",
+      "shops": true,
+      "auctions": true
+    },
+    "telegram": {
+      "enabled": true,
+      "channel": "https://t.me/ReZoobastik",
+      "integration": true
+    },
+    "voiceChat": {
+      "enabled": true,
+      "version": "2.6.11"
+    }
+  },
+  "datapacks": [
+    "1-21-5-1-21-11-tbirds-structures",
+    "2032-world-height",
+    "Cherry Monastery 1.21.11",
+    "Conservatory Piglin DP 1.21.11",
+    "Cottages Witch Huts 1.21.11",
+    "ddd-v.1.0.5.4-MC-1.21.11",
+    "Dungeons and Taverns v5.1.0",
+    "Dungeons+ V1.11.1",
+    "Epic Witch Huts v1.2.0",
+    "Explorify v1.6.4",
+    "Fallen Logs 1.21.11",
+    "hopobettermineshaft-1-21-11-1-3-5",
+    "hopobetterruinedportals-1-21-11-1-4-9",
+    "hopobetterunderwaterruins-1-21-11-1-2-6",
+    "Ice Castle 1.21.11",
+    "katters_structures_v2-3-1",
+    "KEEB_Mangrove_Manor",
+    "lukis-grand-capitals-v1.1.2",
+    "Mangrove Supply Tower 1.21.11",
+    "Minecraft Movie Structures 1.21.11",
+    "more_mobs-v1.5.8",
+    "Nullscape_1.21.11_v1.2.16",
+    "Pale Garden Outpost 1.21.11",
+    "Pumpkin Farmhouse 1.21.11",
+    "Structory_1.21_v1.3.14",
+    "Structory_Towers_1.21_v1.0.15",
+    "Trek 1.19-1.21.11 B0.5.1.2",
+    "Unwrecked Ships Plus 2.0.6",
+    "v11qraftyfied",
+    "Wabi-Sabi Structures-3.0.5",
+    "Yggdrasil-5.4.0"
+  ],
+  "voting": {
+    "sites": [
+      {
+        "name": "MinecraftRating",
+        "url": "https://minecraftrating.ru/vote/201690/",
+        "icon": "minecraftrating"
+      },
+      {
+        "name": "HotMC",
+        "url": "https://hotmc.ru/minecraft-server-191520",
+        "icon": "hotmc"
+      },
+      {
+        "name": "TMonitoring",
+        "url": "https://tmonitoring.com/server/zoobastiks/",
+        "icon": "tmonitoring"
+      },
+      {
+        "name": "MineServ",
+        "url": "https://mineserv.top/zoobastiks",
+        "icon": "mineserv"
+      },
+      {
+        "name": "MisterLauncher",
+        "url": "https://misterlauncher.org/server/zoobastiks/",
+        "icon": "misterlauncher"
+      }
+    ]
+  },
+  "social": {
+    "telegram": "https://t.me/ReZoobastik",
+    "discord": "https://discord.com/invite/g462MJEm3H"
+  },
+  "administration": [
+    {
+      "rank": "Владелец сервера",
+      "name": "Владислав",
+      "nickname": "Zoobastiks",
+      "telegram": "@Zoobastiks",
+      "telegramId": 693794119
+    },
+    {
+      "rank": "Владелец сервера",
+      "name": "Даниель",
+      "nickname": "DenielGars",
+      "telegram": "@yajobs",
+      "telegramId": 987654321
+    },
+    {
+      "rank": "Администрация сервера",
+      "name": "Александра",
+      "nickname": "AlestarAlex",
+      "telegram": "@AlestarAlex",
+      "telegramId": 5073146708
+    },
+    {
+      "rank": "Администрация сервера",
+      "name": "Илья",
+      "nickname": "Rayevsky",
+      "telegram": "@il_rayevsky",
+      "telegramId": 5890406638
+    },
+    {
+      "rank": "Администрация сервера",
+      "name": "Неизвестно",
+      "nickname": "gkk86",
+      "telegram": "@gkk86",
+      "telegramId": 5577784170
+    }
+  ]
+}
+

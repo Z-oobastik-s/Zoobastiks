@@ -1,0 +1,10 @@
+.git
+node_modules
+.env
+*.log
+exclude.txt
+deploy.bat
+README.md
+.github
+*.md
+

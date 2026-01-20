@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zoobastiks - Minecraft Survival сервер 1.21.11 с уникальными механиками, кланами, работами и множеством плагинов">
+    <meta name="keywords" content="zoobastiks, minecraft, сервер, survival, майнкрафт, зубастикс, zoobastiks minecraft, zoobastik, zoob, z, zoobastiks github">
+    <meta name="author" content="Zoobastiks">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://z-oobastik-s.github.io/Zoobastiks/">
+    <meta property="og:title" content="Zoobastiks - Minecraft Сервер">
+    <meta property="og:description" content="Survival сервер Minecraft 1.21.11 с уникальными механиками">
+    <meta property="og:image" content="https://z-oobastik-s.github.io/Zoobastiks/assets/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://z-oobastik-s.github.io/Zoobastiks/">
+    <meta property="twitter:title" content="Zoobastiks - Minecraft Сервер">
+    <meta property="twitter:description" content="Survival сервер Minecraft 1.21.11 с уникальными механиками">
+    <meta property="twitter:image" content="https://z-oobastik-s.github.io/Zoobastiks/assets/og-image.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GameServer",
+      "name": "Zoobastiks",
+      "description": "Minecraft Survival сервер 1.21.11",
+      "game": "Minecraft",
+      "gamePlatform": "Java Edition",
+      "operatingSystem": "Paper 1.21.11",
+      "applicationCategory": "GameServer",
+      "url": "https://z-oobastik-s.github.io/Zoobastiks/",
+      "sameAs": [
+        "https://t.me/ReZoobastik",
+        "https://discord.com/invite/g462MJEm3H"
+      ]
+    }
+    </script>
+    
+    <title>Zoobastiks - Minecraft Сервер</title>
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <nav id="main-nav" class="nav-container">
+            <div class="nav-content">
+                <a href="/" class="nav-logo">
+                    <span class="logo-text">Zoobastiks</span>
+                </a>
+                <div class="nav-links">
+                    <a href="/" data-page="home" class="nav-link active">Главная</a>
+                    <a href="/wiki" data-page="wiki" class="nav-link">Вики</a>
+                    <a href="/admin" data-page="admin" class="nav-link">Администрация</a>
+                    <a href="/gallery" data-page="gallery" class="nav-link">Фотоальбом</a>
+                    <a href="/support" data-page="support" class="nav-link">Поддержка</a>
+                    <a href="/vote" data-page="vote" class="nav-link">Голосование</a>
+                </div>
+                <div class="nav-controls">
+                    <select id="lang-selector" class="lang-selector">
+                        <option value="ru">RU</option>
+                        <option value="en">EN</option>
+                        <option value="ua">UA</option>
+                    </select>
+                    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Custom Cursor (Sword) -->
+        <div id="custom-cursor" class="custom-cursor">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path d="M6.92 5.5L18.5 18.08l-1.41 1.41L5.5 6.92 6.92 5.5m9.58 4.5L21 11.92 11.92 21l-1.92-4.5L6.5 15.5 2.5 11.5l4.5-4.5L9.08 2 19.5 10z" fill="currentColor"/>
+            </svg>
+        </div>
+        
+        <!-- Main Content -->
+        <main id="main-content" class="main-content">
+            <!-- Pages will be loaded here dynamically -->
+        </main>
+        
+        <!-- Footer -->
+        <footer id="main-footer" class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zoobastiks</h3>
+                    <p>Survival сервер Minecraft 1.21.11</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Ссылки</h4>
+                    <a href="https://t.me/ReZoobastik" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <a href="https://discord.com/invite/g462MJEm3H" target="_blank" rel="noopener noreferrer">Discord</a>
+                </div>
+                <div class="footer-section">
+                    <h4>IP Сервера</h4>
+                    <p class="server-ip">Zoobastiks.20tps.name</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zoobastiks. Все права защищены.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/core.js" type="module"></script>
+    <script src="js/router.js" type="module"></script>
+    <script src="js/i18n.js" type="module"></script>
+    <script src="js/effects.js" type="module"></script>
+</body>
+</html>
+
