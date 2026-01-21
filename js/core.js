@@ -1,4 +1,4 @@
-// Core Application Module
+// Core Application Module - SIMPLIFIED
 import { i18n } from './i18n.js';
 import { router } from './router.js';
 import { initEffects } from './effects.js';
@@ -7,15 +7,24 @@ class App {
     constructor() {
         this.currentPage = 'home';
         this.serverInfo = null;
-        this.init();
     }
 
     async init() {
-        // Initialize i18n FIRST (before anything else that needs translations)
+        // CRITICAL: Load translations FIRST and wait for them
         await i18n.init();
+        
+        // Verify translations are loaded
+        if (!i18n.translations || Object.keys(i18n.translations).length === 0) {
+            console.error('Translations failed to load!');
+            // Try one more time
+            await i18n.init();
+        }
         
         // Load server info
         await this.loadServerInfo();
+        
+        // Setup language selector BEFORE router init
+        this.setupLanguageSelector();
         
         // Initialize router
         router.init();
@@ -26,55 +35,37 @@ class App {
         // Setup navigation
         this.setupNavigation();
         
-        // Setup language selector
-        this.setupLanguageSelector();
-        
-        // Load initial page (after translations are loaded)
+        // Load initial page
         await router.navigate(window.location.pathname || '/');
-    }
-
-    getBasePath() {
-        // Get base path for GitHub Pages
-        const path = window.location.pathname;
-        if (path.includes('/Zoobastiks/')) {
-            return '/Zoobastiks';
-        }
-        return '';
     }
 
     async loadServerInfo() {
         try {
-            const basePath = this.getBasePath();
-            // Try multiple paths for GitHub Pages compatibility
+            const basePath = window.location.pathname.includes('/Zoobastiks/') ? '/Zoobastiks' : '';
             const paths = [
                 `${basePath}/data/server-info.json`,
-                'data/server-info.json',
-                '/data/server-info.json'
+                `./data/server-info.json`,
+                `data/server-info.json`,
+                `/data/server-info.json`
             ];
             
-            let response = null;
             for (const path of paths) {
                 try {
-                    response = await fetch(path);
-                    if (response.ok) break;
+                    const response = await fetch(path);
+                    if (response && response.ok) {
+                        this.serverInfo = await response.json();
+                        return;
+                    }
                 } catch (e) {
                     continue;
                 }
             }
             
-            if (!response || !response.ok) {
-                throw new Error(`HTTP ${response?.status || 'Network error'}`);
-            }
-            
-            this.serverInfo = await response.json();
+            throw new Error('Failed to load server info');
         } catch (error) {
             console.error('Failed to load server info:', error);
-            // Use default server info
             this.serverInfo = {
-                server: {
-                    ip: 'Zoobastiks.20tps.name',
-                    port: 20054
-                },
+                server: { ip: 'Zoobastiks.20tps.name', port: 20054 },
                 worlds: []
             };
         }
@@ -99,7 +90,6 @@ class App {
             });
         }
 
-        // Close mobile menu on link click
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navLinksContainer.classList.remove('active');
@@ -108,23 +98,13 @@ class App {
     }
 
     setupLanguageSelector() {
-        // Wait for DOM to be ready
-        const setupSelector = () => {
-            const langSelector = document.getElementById('lang-selector');
-            if (langSelector) {
-                langSelector.value = i18n.currentLang;
-                // Remove existing listeners and add new one
-                const newSelector = langSelector.cloneNode(true);
-                langSelector.parentNode.replaceChild(newSelector, langSelector);
-                newSelector.addEventListener('change', async (e) => {
-                    await i18n.setLanguage(e.target.value);
-                });
-            } else {
-                // Retry if element not found yet
-                setTimeout(setupSelector, 100);
-            }
-        };
-        setupSelector();
+        const langSelector = document.getElementById('lang-selector');
+        if (langSelector) {
+            langSelector.value = i18n.currentLang;
+            langSelector.addEventListener('change', async (e) => {
+                await i18n.setLanguage(e.target.value);
+            });
+        }
     }
 
     getServerInfo() {
@@ -132,14 +112,17 @@ class App {
     }
 }
 
-// Initialize app when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+// Initialize app
+(async () => {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.app = new App();
+            window.app.init();
+        });
+    } else {
         window.app = new App();
-    });
-} else {
-    window.app = new App();
-}
+        await window.app.init();
+    }
+})();
 
 export default App;
-

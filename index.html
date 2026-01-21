@@ -45,6 +45,36 @@
     <link rel="stylesheet" href="css/core.css">
     <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/animations.css">
+    <script>
+        // Pre-load translations BEFORE modules load
+        (async function() {
+            const lang = localStorage.getItem('lang') || 'ru';
+            const basePath = window.location.pathname.includes('/Zoobastiks/') ? '/Zoobastiks' : '';
+            const paths = [
+                `${basePath}/data/locales/${lang}.json`,
+                `./data/locales/${lang}.json`,
+                `data/locales/${lang}.json`,
+                `/data/locales/${lang}.json`
+            ];
+            
+            for (const path of paths) {
+                try {
+                    const response = await fetch(path);
+                    if (response && response.ok) {
+                        window.__TRANSLATIONS__ = await response.json();
+                        break;
+                    }
+                } catch (e) {
+                    continue;
+                }
+            }
+            
+            // Fallback to empty if all fail
+            if (!window.__TRANSLATIONS__) {
+                window.__TRANSLATIONS__ = {};
+            }
+        })();
+    </script>
 </head>
 <body>
     <div id="app">

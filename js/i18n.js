@@ -1,31 +1,33 @@
-// Internationalization Module
+// Internationalization Module - SIMPLIFIED VERSION
 class I18n {
     constructor() {
         this.currentLang = localStorage.getItem('lang') || 'ru';
-        this.translations = {};
+        this.translations = window.__TRANSLATIONS__ || {};
         this.observers = [];
-        this.basePath = this.getBasePath();
-    }
-
-    getBasePath() {
-        // Get base path for GitHub Pages
-        const path = window.location.pathname;
-        if (path.includes('/Zoobastiks/')) {
-            return '/Zoobastiks';
-        }
-        return '';
     }
 
     async init() {
+        // If translations already loaded from inline script, use them
+        if (window.__TRANSLATIONS__ && Object.keys(window.__TRANSLATIONS__).length > 0) {
+            this.translations = window.__TRANSLATIONS__;
+            this.updatePage();
+            return;
+        }
+        
+        // Otherwise load them
         await this.loadTranslations(this.currentLang);
         this.updatePage();
     }
 
     async loadTranslations(lang) {
         try {
-            // Try multiple paths for GitHub Pages compatibility
+            // Determine base path
+            const basePath = window.location.pathname.includes('/Zoobastiks/') ? '/Zoobastiks' : '';
+            
+            // Try paths in order
             const paths = [
-                `${this.basePath}/data/locales/${lang}.json`,
+                `${basePath}/data/locales/${lang}.json`,
+                `./data/locales/${lang}.json`,
                 `data/locales/${lang}.json`,
                 `/data/locales/${lang}.json`
             ];
@@ -34,27 +36,27 @@ class I18n {
             for (const path of paths) {
                 try {
                     response = await fetch(path);
-                    if (response.ok) break;
+                    if (response && response.ok) {
+                        this.translations = await response.json();
+                        window.__TRANSLATIONS__ = this.translations; // Cache
+                        this.currentLang = lang;
+                        localStorage.setItem('lang', lang);
+                        this.notifyObservers();
+                        return;
+                    }
                 } catch (e) {
                     continue;
                 }
             }
             
-            if (!response || !response.ok) {
-                throw new Error(`HTTP ${response?.status || 'Network error'}`);
-            }
-            
-            this.translations = await response.json();
-            this.currentLang = lang;
-            localStorage.setItem('lang', lang);
-            this.notifyObservers();
+            throw new Error('Failed to load translations from all paths');
         } catch (error) {
             console.error(`Failed to load translations for ${lang}:`, error);
             // Fallback to Russian
             if (lang !== 'ru') {
                 await this.loadTranslations('ru');
             } else {
-                // If Russian also fails, use empty translations
+                // Last resort - use empty object
                 this.translations = {};
                 console.error('Failed to load any translations');
             }
@@ -62,7 +64,7 @@ class I18n {
     }
 
     async setLanguage(lang) {
-        if (lang === this.currentLang) return;
+        if (lang === this.currentLang && this.translations && Object.keys(this.translations).length > 0) return;
         await this.loadTranslations(lang);
         this.updatePage();
         // Reload current page to apply translations
@@ -72,9 +74,7 @@ class I18n {
     }
 
     t(key, params = {}) {
-        // If translations not loaded, return key
         if (!this.translations || Object.keys(this.translations).length === 0) {
-            console.warn(`Translations not loaded yet, returning key: ${key}`);
             return key;
         }
         
@@ -85,12 +85,10 @@ class I18n {
             if (value && typeof value === 'object' && k in value) {
                 value = value[k];
             } else {
-                console.warn(`Translation not found for key: ${key}`);
-                return key; // Return key if translation not found
+                return key;
             }
         }
         
-        // Replace parameters
         if (typeof value === 'string' && Object.keys(params).length > 0) {
             return value.replace(/\{(\w+)\}/g, (match, param) => {
                 return params[param] !== undefined ? params[param] : match;
@@ -99,24 +97,14 @@ class I18n {
         
         return value || key;
     }
-    
-    isReady() {
-        return this.translations && Object.keys(this.translations).length > 0;
-    }
 
     updatePage() {
-        // Update meta tags
-        document.title = this.t('meta.title');
+        document.title = this.t('meta.title') || 'Zoobastiks - Minecraft Сервер';
         const metaDescription = document.querySelector('meta[name="description"]');
         if (metaDescription) {
-            metaDescription.content = this.t('meta.description');
-        }
-        const metaKeywords = document.querySelector('meta[name="keywords"]');
-        if (metaKeywords) {
-            metaKeywords.content = this.t('meta.keywords');
+            metaDescription.content = this.t('meta.description') || metaDescription.content;
         }
 
-        // Update navigation
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             const page = link.dataset.page;
@@ -127,10 +115,6 @@ class I18n {
                 }
             }
         });
-
-        // Update footer
-        const footerLinks = document.querySelectorAll('.footer-section a');
-        // Footer links are usually external, so we don't translate them
     }
 
     subscribe(callback) {
@@ -147,4 +131,3 @@ class I18n {
 }
 
 export const i18n = new I18n();
-
