@@ -11,11 +11,11 @@ class App {
     }
 
     async init() {
+        // Initialize i18n FIRST (before anything else that needs translations)
+        await i18n.init();
+        
         // Load server info
         await this.loadServerInfo();
-        
-        // Initialize i18n
-        await i18n.init();
         
         // Initialize router
         router.init();
@@ -29,16 +29,32 @@ class App {
         // Setup language selector
         this.setupLanguageSelector();
         
-        // Load initial page
+        // Load initial page (after translations are loaded)
         await router.navigate(window.location.pathname || '/');
     }
 
     async loadServerInfo() {
         try {
-            const response = await fetch('/data/server-info.json');
+            // Try relative path first (for GitHub Pages)
+            let response = await fetch('data/server-info.json');
+            if (!response.ok) {
+                // Fallback to absolute path
+                response = await fetch('/data/server-info.json');
+            }
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
             this.serverInfo = await response.json();
         } catch (error) {
             console.error('Failed to load server info:', error);
+            // Use default server info
+            this.serverInfo = {
+                server: {
+                    ip: 'Zoobastiks.20tps.name',
+                    port: 20054
+                },
+                worlds: []
+            };
         }
     }
 

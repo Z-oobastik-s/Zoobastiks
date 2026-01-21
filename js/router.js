@@ -66,6 +66,11 @@ class Router {
         mainContent.innerHTML = '<div class="spinner"></div>';
 
         try {
+            // Ensure translations are loaded before rendering
+            if (!i18n.translations || Object.keys(i18n.translations).length === 0) {
+                await i18n.init();
+            }
+            
             // Load page module
             const pageModule = await import(`./pages/${pageName}.js`);
             const pageContent = await pageModule.render();
@@ -91,9 +96,9 @@ class Router {
             console.error(`Failed to load page ${pageName}:`, error);
             mainContent.innerHTML = `
                 <div class="container text-center">
-                    <h1 class="heading-1">${i18n.t('common.error')}</h1>
+                    <h1 class="heading-1">Ошибка загрузки</h1>
                     <p>${error.message}</p>
-                    <a href="/" class="btn mt-2">${i18n.t('common.back')}</a>
+                    <a href="/" class="btn mt-2">На главную</a>
                 </div>
             `;
         }
@@ -101,4 +106,6 @@ class Router {
 }
 
 export const router = new Router();
+// Make router available globally for i18n
+window.router = router;
 

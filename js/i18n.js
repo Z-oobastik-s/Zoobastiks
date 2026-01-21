@@ -13,7 +13,15 @@ class I18n {
 
     async loadTranslations(lang) {
         try {
-            const response = await fetch(`/data/locales/${lang}.json`);
+            // Try relative path first (for GitHub Pages)
+            let response = await fetch(`data/locales/${lang}.json`);
+            if (!response.ok) {
+                // Fallback to absolute path
+                response = await fetch(`/data/locales/${lang}.json`);
+            }
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
             this.translations = await response.json();
             this.currentLang = lang;
             localStorage.setItem('lang', lang);
@@ -23,6 +31,10 @@ class I18n {
             // Fallback to Russian
             if (lang !== 'ru') {
                 await this.loadTranslations('ru');
+            } else {
+                // If Russian also fails, use empty translations
+                this.translations = {};
+                console.error('Failed to load any translations');
             }
         }
     }
@@ -31,6 +43,10 @@ class I18n {
         if (lang === this.currentLang) return;
         await this.loadTranslations(lang);
         this.updatePage();
+        // Reload current page to apply translations
+        if (window.router) {
+            await window.router.navigate(window.location.pathname, false);
+        }
     }
 
     t(key, params = {}) {
