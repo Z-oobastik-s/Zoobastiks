@@ -4,6 +4,16 @@ class I18n {
         this.currentLang = localStorage.getItem('lang') || 'ru';
         this.translations = {};
         this.observers = [];
+        this.basePath = this.getBasePath();
+    }
+
+    getBasePath() {
+        // Get base path for GitHub Pages
+        const path = window.location.pathname;
+        if (path.includes('/Zoobastiks/')) {
+            return '/Zoobastiks';
+        }
+        return '';
     }
 
     async init() {
@@ -13,15 +23,27 @@ class I18n {
 
     async loadTranslations(lang) {
         try {
-            // Try relative path first (for GitHub Pages)
-            let response = await fetch(`data/locales/${lang}.json`);
-            if (!response.ok) {
-                // Fallback to absolute path
-                response = await fetch(`/data/locales/${lang}.json`);
+            // Try multiple paths for GitHub Pages compatibility
+            const paths = [
+                `${this.basePath}/data/locales/${lang}.json`,
+                `data/locales/${lang}.json`,
+                `/data/locales/${lang}.json`
+            ];
+            
+            let response = null;
+            for (const path of paths) {
+                try {
+                    response = await fetch(path);
+                    if (response.ok) break;
+                } catch (e) {
+                    continue;
+                }
             }
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
+            
+            if (!response || !response.ok) {
+                throw new Error(`HTTP ${response?.status || 'Network error'}`);
             }
+            
             this.translations = await response.json();
             this.currentLang = lang;
             localStorage.setItem('lang', lang);
@@ -50,6 +72,12 @@ class I18n {
     }
 
     t(key, params = {}) {
+        // If translations not loaded, return key
+        if (!this.translations || Object.keys(this.translations).length === 0) {
+            console.warn(`Translations not loaded yet, returning key: ${key}`);
+            return key;
+        }
+        
         const keys = key.split('.');
         let value = this.translations;
         
@@ -57,6 +85,7 @@ class I18n {
             if (value && typeof value === 'object' && k in value) {
                 value = value[k];
             } else {
+                console.warn(`Translation not found for key: ${key}`);
                 return key; // Return key if translation not found
             }
         }
@@ -69,6 +98,10 @@ class I18n {
         }
         
         return value || key;
+    }
+    
+    isReady() {
+        return this.translations && Object.keys(this.translations).length > 0;
     }
 
     updatePage() {

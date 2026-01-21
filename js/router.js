@@ -66,13 +66,26 @@ class Router {
         mainContent.innerHTML = '<div class="spinner"></div>';
 
         try {
-            // Ensure translations are loaded before rendering
-            if (!i18n.translations || Object.keys(i18n.translations).length === 0) {
-                await i18n.init();
+            // CRITICAL: Ensure translations are loaded before rendering
+            // Wait for translations to be fully loaded (max 5 seconds)
+            let attempts = 0;
+            const maxAttempts = 50; // 5 seconds max wait
+            while (!i18n.isReady() && attempts < maxAttempts) {
+                if (!i18n.translations || Object.keys(i18n.translations).length === 0) {
+                    await i18n.init();
+                }
+                await new Promise(resolve => setTimeout(resolve, 100));
+                attempts++;
+            }
+            
+            if (!i18n.isReady()) {
+                console.error('Failed to load translations after multiple attempts');
             }
             
             // Load page module
             const pageModule = await import(`./pages/${pageName}.js`);
+            
+            // Wait for render to complete (it's async)
             const pageContent = await pageModule.render();
             
             // Update content with fade animation
@@ -98,7 +111,7 @@ class Router {
                 <div class="container text-center">
                     <h1 class="heading-1">Ошибка загрузки</h1>
                     <p>${error.message}</p>
-                    <a href="/" class="btn mt-2">На главную</a>
+                    <a href="${window.location.pathname.includes('/Zoobastiks/') ? '/Zoobastiks/' : '/'}" class="btn mt-2">На главную</a>
                 </div>
             `;
         }
